@@ -24,7 +24,7 @@ except KeyError:
             "this": "data",
             "is": "very expensive to get otherwise",
             }
-    cache.add(123, costly_data)
+    cache.add(data_id, costly_data)
     cache.save()
 
 print(costly_data['is'])
