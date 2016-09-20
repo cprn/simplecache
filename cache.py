@@ -22,11 +22,13 @@ class PickleCache:
         return cache
 
     def save(self):
-        pickle.dump(self.__cache, open(self.__cachejar, "wb"))
+        with open(self.__cachejar, "wb") as file:
+            pickle.dump(self.__cache, file)
 
     def __load(self):
         try:
-            self.__cache = pickle.load(open(self.__cachejar, "rb"))
+            with open(self.__cachejar, "rb") as file:
+                self.__cache = pickle.load(file)
             print("Cache loaded...")
         except IOError:
             print("Cache empty...")
