@@ -12,7 +12,7 @@ $ git submodule add https://github.com/cprn/simplecache.git
 from simplecache.cache import PickleCache
 
 timeout_seconds = 30
-cache = PickleCache('test.cache', timeout_seconds)
+cache = PickleCache('your.cache', timeout_seconds)
 
 try:
     data_id = 123
