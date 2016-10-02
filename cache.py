@@ -24,9 +24,9 @@ class PickleCache:
     def save(self):
         pickle.dump(self.__cache, open(self.__cachejar, "wb"))
 
-    def __load(self):
+    def __load(self, verbose = False):
         try:
             self.__cache = pickle.load(open(self.__cachejar, "rb"))
-            print("Cache loaded...")
+            verbose and print("Cache loaded...")
         except IOError:
-            print("Cache empty...")
+            verbose and print("Cache empty...")
